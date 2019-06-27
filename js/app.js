@@ -173,7 +173,13 @@ function makeBuddies () {
 
 function leaveTheShire() { 
   console.log("6: leaveTheShire");
-
+  const hobbitsGoToRivendell = document.createElement("ul");
+  for(let i = 0; i < hobbits.length; i++){
+    const li = document.createElement("li");
+    li.innerHTML = hobbits[i];
+    hobbitsGoToRivendell.appendChild(li);
+  }
+  document.querySelector("#Rivendell").appendChild(hobbitsGoToRivendell);
   // assemble the `hobbits` and move them to `rivendell`
 }
 
