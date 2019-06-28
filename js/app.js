@@ -173,12 +173,7 @@ function makeBuddies () {
 
 function leaveTheShire() { 
   console.log("6: leaveTheShire");
-  // const hobbitsGoToRivendell = document.createElement("ul");
-  // for(let i = 0; i < hobbits.length; i++){
-  //   const li = document.createElement("li");
-  //   li.innerHTML = hobbits[i];
-  //   hobbitsGoToRivendell.appendChild(li);
-  // }
+ 
   document.querySelector("#Rivendell").appendChild(document.querySelector("ul"));
   // assemble the `hobbits` and move them to `rivendell`
 }
@@ -227,13 +222,7 @@ function forgeTheFellowShip() {
     alert(document.querySelector("li").innerText + " has joined your party");
     theFellowShip.appendChild(document.querySelector("li"));
   }
-  // const rivendell = document.querySelector("#Rivendell");
-  // for(let i = 0; i < combinedArray.length; i++){
-  //   const li = document.createElement("li");
-  //   li.innerHTML = combinedArray[i];
-  //   combineFellowship.appendChild(li);
-  //   alert(combinedArray[i] + " has joined your party.");
-  // }
+ 
   document.querySelector("#the-fellowship").appendChild(combineFellowship);
 
 
@@ -261,7 +250,7 @@ function theBalrog() {
   const nameChange = document.querySelector("#the-fellowship").childNodes[0];
   nameChange.innerHTML = "Gandalf the White";
   nameChange.style.backgroundColor = "white";
-  nameChange.style.borderColor = "gray";
+  nameChange.style.border = "thick solid gray";
 
    // change the `'Gandalf'` text to `'Gandalf the White'`
    // apply the following style to the element, make the // background 'white', add a grey border
@@ -295,16 +284,19 @@ function hornOfGondor() {
 
 function itsDangerousToGoAlone() { 
   console.log("11: itsDangerousToGoAlone");
-  const mountDoom = document.createElement("div");
-  mountDoom.id = "mount-doom";
-  const newMordorDiv = document.createElement("ul")
+  const div = document.createElement("div");
+  div.id = "mount-doom";
+  document.querySelector("#Mordor").appendChild(div);
+  const hobbitGroupDiv = document.createElement("ul")
+  document.querySelector("#Mordor").appendChild(hobbitGroupDiv);
+
   for(let i = 0; i < 2; i++){
-   newMordorDiv.appendChild(document.querySelector(".hobbit"));
+   hobbitGroupDiv.appendChild(document.querySelector(".hobbit"));
       
     
   }
  
- document.querySelector("#Mordor").appendChild(newMordorDiv);
+// document.querySelector("#Mordor").appendChild(newMordorDiv);
  
 
   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
@@ -322,6 +314,11 @@ function itsDangerousToGoAlone() {
 
 function weWantsIt() { 
   console.log("12: weWantsIt");
+  const gollumDiv = document.createElement("div");
+  gollumDiv.id = "gollum";
+  document.querySelector("#Mordor").appendChild(gollumDiv);
+  gollumDiv.appendChild(document.querySelector("#the-ring"));
+  document.querySelector("#mount-doom").appendChild(gollumDiv);
   // Create a div with an id of `'gollum'` and add it to Mordor
   // Remove `the ring` from `Frodo` and give it to `Gollum`
   // Move Gollum into Mount Doom
@@ -337,6 +334,18 @@ function weWantsIt() {
 
 function thereAndBackAgain() { 
   console.log("13: thereAndBackAgain");
+  const gollum = document.querySelector("#gollum");
+  const mountDoom = document.querySelector("#mount-doom");
+  mountDoom.removeChild(gollum);
+
+
+  const hobbitsInShire = document.createElement("ul");
+
+  for(let i = 0; i < 4; i++){
+    hobbitsInShire.appendChild(document.querySelector(".hobbit"));
+  }
+    document.querySelector("#The-Shire").appendChild(hobbitsInShire);
+
   // remove `Gollum` and `the Ring` from the document
   // Move all the `hobbits` back to `the shire`
 }
