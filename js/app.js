@@ -245,6 +245,11 @@ function forgeTheFellowShip() {
 
 function theBalrog() { 
   console.log("9: theBalrog");
+  const nameChange = document.querySelector("#the-fellowship").childNodes[0].childNodes[0];
+  nameChange.innerHTML = "Gandalf the White";
+  nameChange.style.backgroundColor = "white";
+  nameChange.style.borderColor = "gray";
+
    // change the `'Gandalf'` text to `'Gandalf the White'`
    // apply the following style to the element, make the // background 'white', add a grey border
 }
