@@ -193,6 +193,10 @@ function leaveTheShire() {
 
 function beautifulStranger() { 
   console.log("7: beautifulStranger");
+  const buddiesAside = document.querySelector("aside").childNodes[0].childNodes[3];
+  buddiesAside.innerText = "Aragorn";
+
+  
 
   // change the `'Strider'` text to `'Aragorn'`
 }
