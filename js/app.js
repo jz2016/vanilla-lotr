@@ -212,6 +212,23 @@ function beautifulStranger() {
 function forgeTheFellowShip() { 
   console.log("8: forgeTheFellowShip");
   // create a new div called `'the-fellowship'` within `rivendell`
+  const theFellowShip = document.createElement("div");
+  theFellowShip.id = "the-fellowship";
+  document.querySelector("#Rivendell").appendChild(theFellowShip);
+  const combinedArray = buddies.concat(hobbits);
+  const combineFellowship = document.createElement("ul");
+  for(let i = 0; i < combinedArray.length; i++){
+    const li = document.createElement("li");
+    li.innerHTML = combinedArray[i];
+    combineFellowship.appendChild(li);
+    alert(combinedArray[i] + " has joined your party.");
+  }
+  document.querySelector("#the-fellowship").appendChild(combineFellowship);
+
+
+  
+
+
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
   // after each character is added make an alert that they // have joined your party
   
