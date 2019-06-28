@@ -173,13 +173,13 @@ function makeBuddies () {
 
 function leaveTheShire() { 
   console.log("6: leaveTheShire");
-  const hobbitsGoToRivendell = document.createElement("ul");
-  for(let i = 0; i < hobbits.length; i++){
-    const li = document.createElement("li");
-    li.innerHTML = hobbits[i];
-    hobbitsGoToRivendell.appendChild(li);
-  }
-  document.querySelector("#Rivendell").appendChild(hobbitsGoToRivendell);
+  // const hobbitsGoToRivendell = document.createElement("ul");
+  // for(let i = 0; i < hobbits.length; i++){
+  //   const li = document.createElement("li");
+  //   li.innerHTML = hobbits[i];
+  //   hobbitsGoToRivendell.appendChild(li);
+  // }
+  document.querySelector("#Rivendell").appendChild(document.querySelector("ul"));
   // assemble the `hobbits` and move them to `rivendell`
 }
 
@@ -215,16 +215,29 @@ function forgeTheFellowShip() {
   const theFellowShip = document.createElement("div");
   theFellowShip.id = "the-fellowship";
   document.querySelector("#Rivendell").appendChild(theFellowShip);
-  const combinedArray = buddies.concat(hobbits);
+  // const combinedArray = buddies.concat(hobbits);
+
   const combineFellowship = document.createElement("ul");
-  for(let i = 0; i < combinedArray.length; i++){
-    const li = document.createElement("li");
-    li.innerHTML = combinedArray[i];
-    combineFellowship.appendChild(li);
-    alert(combinedArray[i] + " has joined your party.");
+  theFellowShip.appendChild(combineFellowship)
+  for(let i = 0; i < 3; i++){
+    alert(document.querySelector("li").innerText + " has joined your party.");
+    theFellowShip.appendChild(document.querySelector("li"));
+    alert(document.querySelector(".hobbit").innerText + " has joined your party.");
+    theFellowShip.appendChild(document.querySelector(".hobbit"));
+    alert(document.querySelector("li").innerText + " has joined your party");
+    theFellowShip.appendChild(document.querySelector("li"));
   }
+  // const rivendell = document.querySelector("#Rivendell");
+  // for(let i = 0; i < combinedArray.length; i++){
+  //   const li = document.createElement("li");
+  //   li.innerHTML = combinedArray[i];
+  //   combineFellowship.appendChild(li);
+  //   alert(combinedArray[i] + " has joined your party.");
+  // }
   document.querySelector("#the-fellowship").appendChild(combineFellowship);
 
+
+ 
 
   
 
@@ -245,7 +258,7 @@ function forgeTheFellowShip() {
 
 function theBalrog() { 
   console.log("9: theBalrog");
-  const nameChange = document.querySelector("#the-fellowship").childNodes[0].childNodes[0];
+  const nameChange = document.querySelector("#the-fellowship").childNodes[0];
   nameChange.innerHTML = "Gandalf the White";
   nameChange.style.backgroundColor = "white";
   nameChange.style.borderColor = "gray";
@@ -265,11 +278,11 @@ function theBalrog() {
 function hornOfGondor() { 
   console.log("10: hornOfGondor");
   alert("The horn of Gondor has been blown!");
-  const boromir = document.querySelector("#the-fellowship").childNodes[0];
-  boromir.removeChild(boromir.childNodes[4]);
+  const boromir = document.querySelector("#the-fellowship");
+  boromir.removeChild(boromir.childNodes[6]);
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
-  // Remove `Boromir` from the Fellowship4
+  // Remove `Boromir` from the Fellowship
 }
 
 // COMMIT YOUR WORK
@@ -282,8 +295,20 @@ function hornOfGondor() {
 
 function itsDangerousToGoAlone() { 
   console.log("11: itsDangerousToGoAlone");
+  const mountDoom = document.createElement("div");
+  mountDoom.id = "mount-doom";
+  const newMordorDiv = document.createElement("ul")
+  for(let i = 0; i < 2; i++){
+   newMordorDiv.appendChild(document.querySelector(".hobbit"));
+      
+    
+  }
+ 
+ document.querySelector("#Mordor").appendChild(newMordorDiv);
+ 
+
   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
-  // add a div with an id of `'mount-doom'` to `Mordor`
+  // add a div with an id of `'mount-doom'` to `Mordor` 4,5
 }
 
 
